@@ -17,7 +17,7 @@ filmes = ["Freddy x Jason", "O Ultimato Bourne", "Star Trek",
 
 # Treinar
 rbm.train(base, max_epochs=5000)
-# Valores do leunardo
+# Valores do leonardo
 leonardo = np.array([[0, 1, 0, 1, 0, 0]])
 # Retorna o que deve ser indicado para o usuário
 camada_escondida = rbm.run_visible(leonardo)
@@ -26,4 +26,4 @@ recomendacao = rbm.run_hidden(camada_escondida)
 
 for i in range(len(leonardo[0])):
     if leonardo[0, i] == 0 and recomendacao[0, i] == 1:
-        print(filmes[i])
+        print(f'Recomendação para Leonardo: {filmes[i]}')
